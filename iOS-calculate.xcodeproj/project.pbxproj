@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		EBB49D1026CEE331007A2A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB49D0F26CEE331007A2A89 /* AppDelegate.swift */; };
-		EBB49D1226CEE331007A2A89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB49D1126CEE331007A2A89 /* SceneDelegate.swift */; };
-		EBB49D1426CEE331007A2A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB49D1326CEE331007A2A89 /* ViewController.swift */; };
-		EBB49D1726CEE331007A2A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB49D1526CEE331007A2A89 /* Main.storyboard */; };
 		EBB49D1926CEE333007A2A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB49D1826CEE333007A2A89 /* Assets.xcassets */; };
 		EBB49D1C26CEE333007A2A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB49D1A26CEE333007A2A89 /* LaunchScreen.storyboard */; };
+		EBB49D2D26DBFDB2007A2A89 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB49D2B26DBFDB2007A2A89 /* HomeViewController.swift */; };
+		EBB49D2E26DBFDB2007A2A89 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB49D2C26DBFDB2007A2A89 /* HomeViewController.xib */; };
+		EBB49D3026E40991007A2A89 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB49D2F26E40991007A2A89 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EBB49D0C26CEE331007A2A89 /* iOS-calculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-calculate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB49D0F26CEE331007A2A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBB49D1126CEE331007A2A89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBB49D1326CEE331007A2A89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBB49D1626CEE331007A2A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBB49D1826CEE333007A2A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB49D1B26CEE333007A2A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB49D1D26CEE333007A2A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB49D2B26DBFDB2007A2A89 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EBB49D2C26DBFDB2007A2A89 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		EBB49D2F26E40991007A2A89 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +57,78 @@
 			isa = PBXGroup;
 			children = (
 				EBB49D0F26CEE331007A2A89 /* AppDelegate.swift */,
-				EBB49D1126CEE331007A2A89 /* SceneDelegate.swift */,
-				EBB49D1326CEE331007A2A89 /* ViewController.swift */,
-				EBB49D1526CEE331007A2A89 /* Main.storyboard */,
+				EBB49D2426D93DD0007A2A89 /* View */,
+				EBB49D2526D93DD4007A2A89 /* Controller */,
+				EBB49D2326D93DCC007A2A89 /* Model */,
+				EBB49D2626D94056007A2A89 /* Util */,
+				EBB49D2726D94066007A2A89 /* SupportingFile */,
 				EBB49D1826CEE333007A2A89 /* Assets.xcassets */,
-				EBB49D1A26CEE333007A2A89 /* LaunchScreen.storyboard */,
-				EBB49D1D26CEE333007A2A89 /* Info.plist */,
 			);
 			path = "iOS-calculate";
+			sourceTree = "<group>";
+		};
+		EBB49D2326D93DCC007A2A89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBB49D2426D93DD0007A2A89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D2926DBFD2C007A2A89 /* Home */,
+				EBB49D2826D940BC007A2A89 /* Launch */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBB49D2526D93DD4007A2A89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D2A26DBFD34007A2A89 /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBB49D2626D94056007A2A89 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D2F26E40991007A2A89 /* UIButtonExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EBB49D2726D94066007A2A89 /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D1D26CEE333007A2A89 /* Info.plist */,
+			);
+			path = SupportingFile;
+			sourceTree = "<group>";
+		};
+		EBB49D2826D940BC007A2A89 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D1A26CEE333007A2A89 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		EBB49D2926DBFD2C007A2A89 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D2C26DBFDB2007A2A89 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EBB49D2A26DBFD34007A2A89 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EBB49D2B26DBFDB2007A2A89 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,7 +158,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					EBB49D0B26CEE331007A2A89 = {
 						CreatedOnToolsVersion = 12.5;
@@ -126,7 +190,7 @@
 			files = (
 				EBB49D1C26CEE333007A2A89 /* LaunchScreen.storyboard in Resources */,
 				EBB49D1926CEE333007A2A89 /* Assets.xcassets in Resources */,
-				EBB49D1726CEE331007A2A89 /* Main.storyboard in Resources */,
+				EBB49D2E26DBFDB2007A2A89 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +201,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB49D1426CEE331007A2A89 /* ViewController.swift in Sources */,
 				EBB49D1026CEE331007A2A89 /* AppDelegate.swift in Sources */,
-				EBB49D1226CEE331007A2A89 /* SceneDelegate.swift in Sources */,
+				EBB49D2D26DBFDB2007A2A89 /* HomeViewController.swift in Sources */,
+				EBB49D3026E40991007A2A89 /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBB49D1526CEE331007A2A89 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBB49D1626CEE331007A2A89 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EBB49D1A26CEE333007A2A89 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +344,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JXG85VJB92;
-				INFOPLIST_FILE = "iOS-calculate/Info.plist";
+				INFOPLIST_FILE = "iOS-calculate/SupportingFile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +364,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JXG85VJB92;
-				INFOPLIST_FILE = "iOS-calculate/Info.plist";
+				INFOPLIST_FILE = "iOS-calculate/SupportingFile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
