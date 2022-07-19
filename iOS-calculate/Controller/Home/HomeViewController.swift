@@ -38,21 +38,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var operatorDivision: UIButton!
     
     // MARK: - Variables
-    private var total: Double = 0 // Total
-    private var temp: Double = 0  // Valor por pantalla
-    private var operating = false // Indicar si se ha seleccionado un operador
-    private var decimal = false   // Indicar si el valor es decimal
-    private var operation: OperationType = .none // Operación actual
+    var total: Double = 0 // Total
+    var temp: Double = 0  // Valor por pantalla
+    var operating = false // Indicar si se ha seleccionado un operador
+    var decimal = false   // Indicar si el valor es decimal
+    var operation: OperationType = .none // Operación actual
     
     // MARK: - Constantes
-    private let kDecimalSeparator = Locale.current.decimalSeparator!  // Separador decimal de cada país
-    private let kMaxLength = 9  // Máximo número de dígitos que se pueden introducir
-    private let kTotal = "total"
+    let kDecimalSeparator = Locale.current.decimalSeparator!  // Separador decimal de cada país
+    let kMaxLength = 9  // Máximo número de dígitos que se pueden introducir
+    let kTotal = "total"
 //    private let kMaxValue: Double = 999999999  // Valor máximo que se admite
 //    private let kMinValue: Double = 0.00000001  // Valor minimo que se admite
 
-    private enum OperationType {
-        case none, addition, substractiuon, multiplication, division, percent
+    enum OperationType {
+        case none, addition, substraction, multiplication, division, percent
     }
     
     
@@ -209,7 +209,7 @@ class HomeViewController: UIViewController {
         }
         
         operating = true
-        operation = .substractiuon
+        operation = .substraction
         sender.selectOperation(selected: true)
         
         sender.shine()
@@ -291,9 +291,9 @@ class HomeViewController: UIViewController {
     }
     
     // Limpia todos los valores
-    private func clear(){
+    func clear(){
         operation = .none   // decimos aque no tiene ningún valor
-        operatorAC.setTitle("AC", for: .normal)
+        operatorAC?.setTitle("AC", for: .normal)
         if temp != 0{
             temp = 0
             resultLabel.text = "0"
@@ -305,27 +305,26 @@ class HomeViewController: UIViewController {
     
     
     // Optiene el resultado final
-    private func result(){
+    func result(){
         
         switch operation {
         case .none:
             // No hacemos nada
             break
         case .addition:
-            total = total + temp
+            total += temp
             break
-        case .substractiuon:
-            total = total - temp
+        case .substraction:
+            total -= temp
             break
         case .multiplication:
-            total = total * temp
+            total *= temp
             break
         case .division:
-            total = total / temp
+            total /= temp
             break
         case .percent:
-            temp = temp / 100
-            total = temp
+            total = temp / 100
             break
         }
         
@@ -333,7 +332,7 @@ class HomeViewController: UIViewController {
         if let currentTotal = auxTotalFormatter.string(from: NSNumber(value: total)), currentTotal.count > kMaxLength{
             resultLabel.text = printScientificFormatter.string(from: NSNumber(value: total))
         }else{
-            resultLabel.text = printFormatter.string(from: NSNumber (value: total))
+            resultLabel?.text = printFormatter.string(from: NSNumber (value: total))
         }
 
         operation = .none
@@ -350,10 +349,10 @@ class HomeViewController: UIViewController {
     private func selectVisualOperation() {
         if !operating{
             // No estamos operando
-            operatorAddition.selectOperation(selected: false)
-            operatorSubstraction.selectOperation(selected: false)
-            operatorMultiplication.selectOperation(selected: false)
-            operatorDivision.selectOperation(selected: false)
+            operatorAddition?.selectOperation(selected: false)
+            operatorSubstraction?.selectOperation(selected: false)
+            operatorMultiplication?.selectOperation(selected: false)
+            operatorDivision?.selectOperation(selected: false)
         }else{
             switch operation {
             case .none, .percent:
@@ -368,7 +367,7 @@ class HomeViewController: UIViewController {
                 operatorMultiplication.selectOperation(selected: false)
                 operatorDivision.selectOperation(selected: false)
                 break
-            case .substractiuon:
+            case .substraction:
                 operatorAddition.selectOperation(selected: false)
                 operatorSubstraction.selectOperation(selected: true)
                 operatorMultiplication.selectOperation(selected: false)
